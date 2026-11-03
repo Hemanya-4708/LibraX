@@ -26,16 +26,35 @@ function App() {
 
   return (
     <div className="app">
-      <header>
-        <h1>LibraX</h1>
-        <p>Online Library Management System</p>
-      </header>
+      {!currentUser && (
+        <header className="landing-header">
+          <div className="landing-logo" onClick={() => setPage('home')}>
+            <span className="logo-icon">L</span>
+            <span>LibraX</span>
+          </div>
+
+          <nav className="landing-nav">
+            <button onClick={() => setPage('login')}>Login</button>
+            <button
+              className="nav-signup"
+              onClick={() => setPage('signup')}
+            >
+              Sign Up
+            </button>
+          </nav>
+        </header>
+      )}
+
+      {currentUser && (
+        <header>
+          <h1>LibraX</h1>
+          <p>Online Library Management System</p>
+        </header>
+      )}
 
       <main>
         {currentUser ? (
           <>
-            
-
             {currentUser.role === 'admin' ? (
               <AdminDashboard />
             ) : (
@@ -47,41 +66,81 @@ function App() {
         ) : (
           <>
             {page === 'home' && (
-              <div className="welcome">
-                <h2>Welcome to LibraX</h2>
-                <p>Discover, explore and manage your books in one place.</p>
+              <section className="landing-hero">
+                <div className="hero-content">
+                  <span className="landing-tag">
+                    YOUR DIGITAL LIBRARY
+                  </span>
 
-                <button onClick={() => setPage('login')}>
-                  Login
-                </button>
+                  <h1>
+                    Welcome to <span>LibraX</span>
+                  </h1>
 
-                <button onClick={() => setPage('signup')}>
-                  Sign Up
-                </button>
-              </div>
+                  <h2>Your Gateway to Knowledge.</h2>
+
+                  <p>
+                    Discover new worlds, explore your favourite books
+                    and manage your reading journey — all in one place.
+                  </p>
+
+                  <div className="landing-buttons">
+                    <button
+                      className="landing-primary"
+                      onClick={() => setPage('login')}
+                    >
+                      Login <span>→</span>
+                    </button>
+
+                    <button
+                      className="landing-secondary"
+                      onClick={() => setPage('signup')}
+                    >
+                      Create Account
+                    </button>
+                  </div>
+
+                  <div className="landing-note">
+                    Discover. Read. Grow.
+                  </div>
+                </div>
+
+                <div className="landing-art">
+                  <div className="art-circle"></div>
+                  <div className="book book-one">BOOK</div>
+                  <div className="book book-two">READ</div>
+                  <div className="book book-three">LEARN</div>
+                  <div className="art-caption">
+                    <span>✦</span> A world of knowledge awaits
+                  </div>
+                </div>
+              </section>
             )}
 
             {page === 'login' && (
               <>
                 <Login onLogin={handleLogin} />
-                <button onClick={() => setPage('signup')}>
-                  Create Account
-                </button>
-                <button onClick={() => setPage('home')}>
-                  Back to Home
-                </button>
+                <div className="auth-navigation">
+                  <button onClick={() => setPage('signup')}>
+                    Create Account
+                  </button>
+                  <button onClick={() => setPage('home')}>
+                    Back to Home
+                  </button>
+                </div>
               </>
             )}
 
             {page === 'signup' && (
               <>
                 <Signup />
-                <button onClick={() => setPage('login')}>
-                  Already have an account? Login
-                </button>
-                <button onClick={() => setPage('home')}>
-                  Back to Home
-                </button>
+                <div className="auth-navigation">
+                  <button onClick={() => setPage('login')}>
+                    Already have an account? Login
+                  </button>
+                  <button onClick={() => setPage('home')}>
+                    Back to Home
+                  </button>
+                </div>
               </>
             )}
           </>

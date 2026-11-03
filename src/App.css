@@ -1359,3 +1359,266 @@
   }
 }
 
+/* ===== LIBRAX LANDING PAGE ===== */
+
+.app {
+  min-height: 100vh;
+}
+
+.landing-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 8%;
+  background: #ffffff;
+  border-bottom: 1px solid #e8e8e8;
+}
+
+.landing-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 27px;
+  font-weight: 800;
+  color: #172554;
+  cursor: pointer;
+}
+
+.logo-icon {
+  background: #243b80;
+  color: white;
+  padding: 7px 13px;
+  border-radius: 10px;
+}
+
+.landing-nav {
+  display: flex;
+  gap: 14px;
+}
+
+.landing-nav button,
+.auth-navigation button {
+  border: none;
+  background: transparent;
+  padding: 11px 20px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  color: #243b80;
+}
+
+.landing-nav .nav-signup {
+  background: #243b80;
+  color: white;
+  border-radius: 8px;
+}
+
+.landing-hero {
+  min-height: 570px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  padding: 65px 10%;
+  background: linear-gradient(120deg, #f4f6ff, #ffffff);
+  overflow: hidden;
+}
+
+.hero-content {
+  max-width: 550px;
+}
+
+.landing-tag {
+  display: inline-block;
+  padding: 9px 15px;
+  background: #e4eaff;
+  color: #243b80;
+  border-radius: 30px;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+}
+
+.landing-hero h1 {
+  margin: 25px 0 10px;
+  font-size: clamp(36px, 5vw, 55px);
+  color: #172554;
+  line-height: 1.15;
+}
+
+.landing-hero h1 span {
+  color: #5269c9;
+}
+
+.landing-hero h2 {
+  font-size: 25px;
+  color: #334155;
+  margin-bottom: 18px;
+}
+
+.landing-hero p {
+  font-size: 16px;
+  line-height: 1.8;
+  color: #64748b;
+}
+
+.landing-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 30px;
+}
+
+.landing-buttons button {
+  padding: 15px 25px;
+  border-radius: 9px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.landing-primary {
+  border: none;
+  background: #243b80;
+  color: white;
+}
+
+.landing-primary:hover,
+.landing-nav .nav-signup:hover {
+  background: #172554;
+}
+
+.landing-primary span {
+  margin-left: 10px;
+}
+
+.landing-secondary {
+  background: white;
+  border: 1px solid #243b80;
+  color: #243b80;
+}
+
+.landing-secondary:hover {
+  background: #e9edff;
+}
+
+.landing-note {
+  margin-top: 30px;
+  color: #5269c9;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.landing-art {
+  width: 380px;
+  height: 340px;
+  position: relative;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.art-circle {
+  position: absolute;
+  width: 290px;
+  height: 290px;
+  border-radius: 50%;
+  background: #e2e8ff;
+}
+
+.book {
+  position: absolute;
+  width: 125px;
+  height: 180px;
+  border-radius: 8px 15px 15px 8px;
+  box-shadow: 8px 12px 20px #17255430;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-weight: 800;
+  letter-spacing: 2px;
+  border-left: 8px solid #ffffff55;
+}
+
+.book-one {
+  background: #344c9c;
+  transform: rotate(-17deg) translate(-48px, 0);
+}
+
+.book-two {
+  background: #d58b50;
+  transform: rotate(0deg) translate(0, -10px);
+  z-index: 2;
+}
+
+.book-three {
+  background: #496b68;
+  transform: rotate(17deg) translate(48px, 0);
+}
+
+.art-caption {
+  position: absolute;
+  bottom: 0;
+  color: #334155;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.art-caption span {
+  color: #d58b50;
+}
+
+.auth-navigation {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 15px 0 25px;
+}
+
+@media (max-width: 750px) {
+  .landing-header {
+    padding: 16px 5%;
+  }
+
+  .landing-hero {
+    padding: 55px 7%;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .landing-hero h1 {
+    font-size: 38px;
+  }
+
+  .landing-buttons {
+    justify-content: center;
+  }
+
+  .landing-art {
+    width: 100%;
+    max-width: 350px;
+  }
+}
+
+@media (max-width: 420px) {
+  .landing-logo {
+    font-size: 22px;
+  }
+
+  .landing-nav {
+    gap: 2px;
+  }
+
+  .landing-nav button {
+    padding: 9px 12px;
+  }
+
+  .landing-hero h1 {
+    font-size: 32px;
+  }
+}
+
